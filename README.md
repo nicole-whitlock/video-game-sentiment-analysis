@@ -6,7 +6,6 @@ Our primary objective is to design and implement a robust pipeline that processe
 
 The central challenge lies in interpreting the varied and often nuanced language found in game reviews. Reviews may include slang, domain-specific jargon, and subtle emotional cues that complicate sentiment classification. Overcoming these hurdles involves rigorous data cleaning, text normalization, and feature extraction. Our solution will harness both traditional machine learning and modern deep learning techniques to achieve high accuracy in sentiment analysis.
 
-
 Dataset overview:
 
 |   id |      title |                                quote |                                             score |  date |   platform |      author | publicationName | review_type |      |
@@ -21,12 +20,27 @@ Dataset overview:
 ### Literature Review
 ### Benchmarking
 
+Multiple models were tested to determine the models to move forward with for development. The time and accuracy of each model was explored to determine the best model to start developing. 
+
 ### Preliminary Experiments
 Preliminary experiments were done on a subset of the data to get an idea of the time and resources required. The distilbert for sequence classification was used to gain an understanding of performance and resource requirements (which turned out to be quite extensive). The same model that was used for sampling, crashed the computer when training on the full dataset and had to be adjusted.
 
 # Model Implementation
 ### Framework Selection
+There were multiple frameworks that were used in the construction of the model:
 
+##### Tensorflow
+
+- Primary framework to structure the data and build the model
+
+- `tf.data.Dataset` to store the data in a dataset for processing the data through the model
+- `tf.keras.layers` to add additional layers to the base model to prevent overfitting and better train the model
+
+##### HuggingFace
+
+- `DistilBertTokenize` - used to tokenize the data into an appropriate format for the distilbert model.
+
+- `TFDistilBertModel`  - this model was used as the inital layer that the data was trained on to be then passed into additional layers that were implemented.
 ### Dataset Preparation
 #### Logistic Regression
 
