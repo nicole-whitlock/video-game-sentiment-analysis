@@ -22,6 +22,7 @@ Dataset overview:
 
 Multiple models were tested to determine the models to move forward with for development. The time and accuracy of each model was explored to determine the best model to start developing. 
 
+
 ### Preliminary Experiments
 Preliminary experiments were done on a subset of the data to get an idea of the time and resources required. The distilbert for sequence classification was used to gain an understanding of performance and resource requirements (which turned out to be quite extensive). The same model that was used for sampling, crashed the computer when training on the full dataset and had to be adjusted.
 
